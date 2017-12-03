@@ -37,7 +37,7 @@ class Channels(models.Model):
     """
     Model representing a book genre (e.g. Science Fiction, Non Fiction).
     """
-    id = models.CharField(max_length=200, help_text="Channel ID(consists of meter ID and channel number")
+    id = models.IntegerField(primary_key=True, help_text="Channel ID(consists of meter ID and channel number")
     meter = models.ForeignKey('Meters', on_delete=models.SET_NULL, null=True)
     description = models.CharField(max_length=200)
 
