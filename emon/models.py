@@ -3,7 +3,7 @@ from django.urls import reverse  # Used to generate urls by reversing the URL pa
 import uuid
 
 
-class Installation(models.Model):
+class Installations(models.Model):
     """
     Model representing a book genre (e.g. Science Fiction, Non Fiction).
     """
@@ -11,14 +11,13 @@ class Installation(models.Model):
     address = models.CharField(max_length=200, help_text="Enter the address of this installation")
     name = models.CharField(max_length=200, help_text="Enter a descriptive name for this installation")
 
-
     def __str__(self):
         """
         String for representing the Model object (in Admin site etc.)
         """
-        return self.Name
+        return self.id
 
-class Meter(models.Model):
+class Meters(models.Model):
     """
     Model representing a book genre (e.g. Science Fiction, Non Fiction).
     """
@@ -26,8 +25,7 @@ class Meter(models.Model):
     serial = models.CharField(max_length= 200,unique=True)
     num_channels = models.PositiveSmallIntegerField()
     installation_date = models.DateField()
-    installation = models.ForeignKey('Installation', on_delete=models.SET_NULL, null=True)
-
+    installation = models.ForeignKey('Installations', on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         """
@@ -35,13 +33,13 @@ class Meter(models.Model):
         """
         return self.id
 
-class Channel(models.Model):
+class Channels(models.Model):
     """
     Model representing a book genre (e.g. Science Fiction, Non Fiction).
     """
     id = models.CharField(max_length=200, help_text="Channel ID(consists of meter ID and channel number")
-    meter = models.ForeignKey('Meter', on_delete=models.SET_NULL, null=True)
-
+    meter = models.ForeignKey('Meters', on_delete=models.SET_NULL, null=True)
+    description = models.CharField(max_length=200)
 
     def __str__(self):
         """
@@ -53,17 +51,16 @@ class ChannelData(models.Model):
     """
     Model representing a book genre (e.g. Science Fiction, Non Fiction).
     """
-    channel = models.ForeignKey('Channel', on_delete=models.SET_NULL, null=True)
+    channel = models.ForeignKey('Channels', on_delete=models.SET_NULL, null=True)
     timestamp = models.DateTimeField()
     vrms = models.DecimalField(max_digits=5, decimal_places=2)
     irms = models.DecimalField(max_digits=5, decimal_places=2)
     units_left = models.DecimalField(max_digits=10, decimal_places=6)
     unitsused = models.DecimalField(max_digits=8, decimal_places=6)
     unit_counter = models.DecimalField(max_digits=13, decimal_places=6)
-    description = models.CharField(max_length=200)
 
     def __str__(self):
         """
         String for representing the Model object (in Admin site etc.)
         """
-        return self.name
+        return self.timestamp
