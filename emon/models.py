@@ -26,7 +26,7 @@ class Meter(models.Model):
     serial = models.CharField(max_length= 200,unique=True)
     num_channels = models.PositiveSmallIntegerField()
     installation_date = models.DateField()
-    installation = models.ForeignKey('Installation')
+    installation = models.ForeignKey('Installation', on_delete=models.SET_NULL, null=True)
 
 
     def __str__(self):
@@ -40,7 +40,7 @@ class Channel(models.Model):
     Model representing a book genre (e.g. Science Fiction, Non Fiction).
     """
     id = models.CharField(max_length=200, help_text="Channel ID(consists of meter ID and channel number")
-    meter = models.ForeignKey('Meter')
+    meter = models.ForeignKey('Meter', on_delete=models.SET_NULL, null=True)
 
 
     def __str__(self):
@@ -53,6 +53,7 @@ class ChannelData(models.Model):
     """
     Model representing a book genre (e.g. Science Fiction, Non Fiction).
     """
+    channel = models.ForeignKey('Channel', on_delete=models.SET_NULL, null=True)
     timestamp = models.DateTimeField()
     vrms = models.DecimalField(max_digits=5, decimal_places=2)
     irms = models.DecimalField(max_digits=5, decimal_places=2)
