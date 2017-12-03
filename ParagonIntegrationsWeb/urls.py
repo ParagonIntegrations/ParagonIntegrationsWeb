@@ -22,12 +22,12 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^emon/', include('emon.urls')),
+    url(r'^EMon/', include('emon.urls')),
 ]
 
 #Add URL maps to redirect the base URL to emon, this is only temporary until the rest of the website is up and running
 urlpatterns += [
-    url(r'^$', RedirectView.as_view(url='/emon/', permanent=True)),
+    url(r'^$', RedirectView.as_view(url='/EMon/', permanent=True)),
 ]
 
 # Serve static files during development
