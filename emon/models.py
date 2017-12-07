@@ -15,7 +15,13 @@ class Installations(models.Model):
         """
         String for representing the Model object (in Admin site etc.)
         """
-        return self.id
+        return self.name
+
+    def get_absolute_url(self):
+        """
+        Returns the url to access a particular book instance.
+        """
+        return reverse('installation-detail', args=[str(self.id)])
 
 class Meters(models.Model):
     """

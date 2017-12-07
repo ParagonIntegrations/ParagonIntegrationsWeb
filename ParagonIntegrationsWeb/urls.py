@@ -25,6 +25,11 @@ urlpatterns = [
     url(r'^EMon/', include('emon.urls')),
 ]
 
+#Add Django site authentication urls (for login, logout, password management)
+urlpatterns += [
+    url(r'^accounts/', include('django.contrib.auth.urls')),
+]
+
 #Add URL maps to redirect the base URL to emon, this is only temporary until the rest of the website is up and running
 urlpatterns += [
     url(r'^$', RedirectView.as_view(url='/EMon/', permanent=True)),

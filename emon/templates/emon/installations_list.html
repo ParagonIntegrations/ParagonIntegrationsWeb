@@ -1,54 +1,19 @@
 {% extends "emon_generic.html" %}
 
+{% block content %}
+    <h1>Installations List</h1>
 
-<div class="above-nav">
-  <div class="container">
-    <p>This is above the navbar</p>
-  </div>
-</div>
+    {% if installations_list %}
+    <ul>
 
-<div class="nav-wrapper" style="height:51px;"> <!-- Prevents content jump when navbar becomes fixed -->
-<nav class="navbar navbar-inverse" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <a class="navbar-logo" href="#" class="pull-left">
-        <img src="http://placehold.it/200x50&text=@1x" srcset="http://placehold.it/200x50&text=@1x 1x, http://placehold.it/400x100&text=@2x 2x" alt="image" width="200" height="50">
-      </a>
-    </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div><!-- /.container-fluid -->
-</nav>
-</div>
-<div id="content" class="container">
-  <div class="text-center">
-    <h1>Bootstrap 3 Navbar under a heading</h1>
-    <p class="lead">Use this document as a way to quickly start any new project. All you get is this text and a mostly barebones HTML document.</p><p>Use this document as a way to quickly start any new project. All you get is this text and a mostly barebones HTML document. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p><p>Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla.</p><p>Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Sed posuere consectetur est at lobortis.</p><p>Use this document as a way to quickly start any new project. All you get is this text and a mostly barebones HTML document. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p><p>Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla.</p><p>Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Sed posuere consectetur est at lobortis.</p><p>Use this document as a way to quickly start any new project. All you get is this text and a mostly barebones HTML document. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p><p>Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla.</p><p>Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Sed posuere consectetur est at lobortis.</p><p>Use this document as a way to quickly start any new project. All you get is this text and a mostly barebones HTML document. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p><p>Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec ullamcorper nulla non metus auctor fringilla.</p><p>Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Sed posuere consectetur est at lobortis.</p>
-  </div> <!-- /.text-center -->
-</div>
+      {% for installation in object_list %}
+      <li>
+        <a href="{{ installation.get_absolute_url }}">{{ installation.name }}</a> ({{installation.address}})
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no installations.</p>
+    {% endif %}
+{% endblock %}
