@@ -1,0 +1,19 @@
+{% extends "emon_generic.html" %}
+
+{% block content %}
+    <h1>Channels</h1>
+
+    {% if channels_list %}
+    <ul>
+
+      {% for channel in object_list %}
+      <li>
+        <a href="{{ channel.get_absolute_url }}">{{ channel.id }}</a> ({{channel.meter}})
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no Channels.</p>
+    {% endif %}
+{% endblock %}

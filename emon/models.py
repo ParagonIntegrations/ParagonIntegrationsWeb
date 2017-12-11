@@ -19,7 +19,7 @@ class Installations(models.Model):
 
     def get_absolute_url(self):
         """
-        Returns the url to access a particular book instance.
+        Returns the url to access a particular installation.
         """
         return reverse('installation-detail', args=[str(self.id)])
 
@@ -37,7 +37,13 @@ class Meters(models.Model):
         """
         String for representing the Model object (in Admin site etc.)
         """
-        return self.id
+        return str(self.id)
+
+    def get_absolute_url(self):
+        """
+        Returns the url to access a particular meter.
+        """
+        return reverse('meter-detail', args=[str(self.id)])
 
 class Channels(models.Model):
     """
@@ -51,7 +57,13 @@ class Channels(models.Model):
         """
         String for representing the Model object (in Admin site etc.)
         """
-        return self.id
+        return str(self.id)
+
+    def get_absolute_url(self):
+        """
+        Returns the url to access a particular channel.
+        """
+        return reverse('channel-detail', args=[str(self.id)])
 
 class ChannelData(models.Model):
     """

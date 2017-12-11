@@ -1,0 +1,13 @@
+{% extends "emon_generic.html" %}
+
+{% block content %}
+    <p><strong>ID:</strong> <a href="">{{ meters.id }}</a></p>
+    <p><strong>Serial:</strong> <a href="">{{ meters.serial }}</a></p>
+    <p><strong>Installation:</strong> <a href="">{{ meters.installation }}</a></p>
+    <br>
+    <h4>Channels:</h4>
+    <br>
+    {% for channel in meters.channels_set.all %}
+        <p><a href="{{ channel.get_absolute_url }}">{{ channel.id }}</a></p>
+    {% endfor %}
+{% endblock content %}

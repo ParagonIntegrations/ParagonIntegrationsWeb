@@ -1,0 +1,13 @@
+{% extends "emon_generic.html" %}
+
+{% block content %}
+    <p><strong>ID:</strong> <a href="">{{ installations.id }}</a></p>
+    <p><strong>Address:</strong> <a href="">{{ installations.address }}</a></p>
+    <p><strong>Name:</strong> <a href="">{{ installations.name }}</a></p>
+    <br>
+    <h4>Meters:</h4>
+    <br>
+    {% for meter in installations.meters_set.all %}
+        <p><a href="{{ meter.get_absolute_url }}">{{ meter.id }}</a></p>
+    {% endfor %}
+{% endblock content %}
